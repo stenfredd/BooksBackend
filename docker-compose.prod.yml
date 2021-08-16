@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  nginx:
+    container_name: back_nginx
+    restart: always
+
+  php:
+    container_name: back_php
+    build:
+      dockerfile: ./.docker/config/php/php.prod.dockerfile
+    restart: always
+
+  php-queue:
+    container_name: back_queue
+    restart: always
+
+  database:
+    container_name: back_database
+    restart: always

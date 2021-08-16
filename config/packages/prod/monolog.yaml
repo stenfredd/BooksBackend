@@ -1,0 +1,15 @@
+# config/packages/prod/monolog.yaml
+monolog:
+    handlers:
+        file_log:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        file_error_log:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%-errors.log"
+            level: error
+        syslog_handler:
+            type: syslog
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: error

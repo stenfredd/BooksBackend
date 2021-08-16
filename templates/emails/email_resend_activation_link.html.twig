@@ -1,0 +1,18 @@
+{% include "emails/partials/header.html.twig" %}
+
+    <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">Добро пожаловать на сайт, {{ nickname }}!</h1>
+
+{% include "emails/partials/header_body.html.twig" %}
+
+    <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;"><p>Вы запросили повторное письмо для активации аккаунта на сайте {{ siteName }}.</p></div>
+    <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">
+        Для активации перейдите по <a href="{{ activationLink }}">ссылке</a>
+    </div>
+
+{% include "emails/partials/body_footer.html.twig" %}
+
+    <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
+        <div>Copyright &#169; 2014 Тут будет текст в футере письма</div>
+    </div>
+
+{% include "emails/partials/footer.html.twig" %}

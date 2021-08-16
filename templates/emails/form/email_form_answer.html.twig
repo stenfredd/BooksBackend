@@ -1,0 +1,80 @@
+{% include "emails/partials/header_logo.html.twig" %}
+
+    <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">
+        <p>Form completed {{createdAt}}</p>
+    </div>
+
+    <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">
+        <div>
+            <strong>Name:</strong><br>
+            {{nickname}}<br>
+
+            <strong>Please enter the name of your Roastery::</strong><br>
+            {{roasteryName}}<br>
+
+            <strong>Email:</strong><br>
+            {{userEmail}}<br>
+
+            <strong>Exact Product Name of your Coffee SKU:</strong><br>
+            {{answers['ProductName']}}<br>
+
+            <strong>Exact Product Name of your Coffee SKU:</strong><br>
+            {{answers['ProductName']}}<br>
+
+            <strong>Product description:</strong><br>
+            {{answers['ProductDescription']|join(', ')}}<br>
+
+            <strong>Brand:</strong><br>
+            {{answers['Brand']}}<br>
+
+            <strong>Roaster type:</strong><br>
+            {{answers['RoasterType']}}<br>
+
+            <strong>Seller:</strong><br>
+            {{answers['Seller']}}<br>
+
+            <strong>Origin:</strong><br>
+            {{answers['Origin']}}<br>
+
+            <strong>Varietal:</strong><br>
+            {{answers['Varietal']}}<br>
+
+            <strong>Flavor notes:</strong><br>
+            {{answers['FlavorNotes']}}<br>
+
+            <strong>Characteristic:</strong><br>
+            {{answers['Characteristic']}}<br>
+
+            <strong>Best for:</strong><br>
+            {{answers['BestFor']}}<br>
+
+            <strong>RoastLevel:</strong><br>
+            {{answers['RoastLevel']}}<br>
+
+            <strong>Altitude:</strong><br>
+            {{answers['Altitude']}}<br>
+
+            <strong>Process:</strong><br>
+            {{answers['Process']}}<br>
+
+            <strong>Product type:</strong><br>
+            {{answers['ProductType']}}<br>
+
+            <strong>SearchTags:</strong><br>
+            {{answers['SearchTags']}}<br>
+
+            <strong>Please upload Product Image (no background/white):</strong><br>
+            {% if file %}
+                <a href="{{file}}">image</a><br>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% include "emails/partials/body_footer.html.twig" %}
+
+    <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
+        <div>Copyright &#169; 2021 The form was created in the domain SIPPY LTD.</div>
+    </div>
+
+{% include "emails/partials/footer.html.twig" %}

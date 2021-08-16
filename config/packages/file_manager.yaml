@@ -1,0 +1,4 @@
+parameters:
+    access_checker:
+        local:
+            form_answers: App\Form\Service\FileAccessChecker
