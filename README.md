@@ -12,7 +12,7 @@
 
 3| Запустить докер:
 
-    sudo docker build --tag psymfonyphp -f ./.docker/config/php/php.dockerfile .
+    sudo docker build --tag booksphp -f ./.docker/config/php/php.dockerfile .
     sudo docker-compose -f docker-compose.yml -f docker-compose.dev.yml build
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
@@ -48,7 +48,7 @@
 >Документация для запросов: http://localhost:8080/api/doc
 
 	
-### Боевой
+### Боевой:
 
     Потребует только git, docker, docker-compose.
 

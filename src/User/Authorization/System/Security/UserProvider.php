@@ -87,7 +87,7 @@ class UserProvider implements UserProviderInterface
 	 */
 	public function refreshUser(UserInterface $user): void
 	{
-		throw new UnsupportedUserException();
+		throw new \LogicException("The method shouldn't have been called. The project is based on pure api");
 	}
 
 	/**

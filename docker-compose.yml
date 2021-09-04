@@ -41,3 +41,26 @@ services:
       - ./.docker/data/postgres/db:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:5432
+
+  elasticsearch:
+    build:
+      dockerfile: ./.docker/config/elastic/elasticsearch.dockerfile
+      context: .
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - cluster.routing.allocation.disk.threshold_enabled=true
+      - cluster.routing.allocation.disk.watermark.low=1gb
+      - cluster.routing.allocation.disk.watermark.high=512mb
+      - cluster.routing.allocation.disk.watermark.flood_stage=256mb
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    volumes:
+      - ./.docker/data/es:/usr/share/elasticsearch/data
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - ${ELASTIC_PORT}:9200

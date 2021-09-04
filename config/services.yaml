@@ -51,3 +51,9 @@ services:
     # FILES
     App\File\Storage\Local\LocalFilesManager:
         arguments: ['%env(BASE_UPLOADS_DIR)%']
+
+    App\File\Storage\Local\Controller\FileController:
+        tags: ['controller.service_arguments']
+        public: true
+        arguments:
+            - '@fos_elastica.finder.user'

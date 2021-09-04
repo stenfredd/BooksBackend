@@ -4,7 +4,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.2.5|^8.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
@@ -33,7 +33,8 @@
         "symfony/twig-bundle": "5.2.*",
         "symfony/validator": "5.2.*",
         "symfony/webpack-encore-bundle": "^1.11",
-        "symfony/yaml": "5.2.*"
+        "symfony/yaml": "5.2.*",
+        "friendsofsymfony/elastica-bundle": "^6.0"
     },
     "require-dev": {
         "ext-json": "*",

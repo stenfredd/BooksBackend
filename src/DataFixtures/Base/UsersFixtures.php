@@ -35,7 +35,7 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface, DependentF
 
 	public function load(ObjectManager $manager)
     {
-		$user = $this->userService->createUser('admin@mail.com', '11111', ['ROLE_ADMIN']);
+		$user = $this->userService->createUser('admin@mail.com', '111111', ['ROLE_ADMIN']);
 
 		$userData = new UserData();
 		$userData->setNickname('admin');

@@ -100,14 +100,35 @@
     "egulias/email-validator": {
         "version": "3.1.1"
     },
+    "elasticsearch/elasticsearch": {
+        "version": "v6.8.2"
+    },
     "exsyst/swagger": {
         "version": "v0.4.2"
+    },
+    "ezimuel/guzzlestreams": {
+        "version": "3.0.1"
+    },
+    "ezimuel/ringphp": {
+        "version": "1.1.2"
     },
     "firebase/php-jwt": {
         "version": "v5.3.0"
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
+    },
+    "friendsofsymfony/elastica-bundle": {
+        "version": "5.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "46c9cd2c1e07f0fcfd97e96f12b03b2e0845c4cd"
+        },
+        "files": [
+            "config/packages/fos_elastica.yaml"
+        ]
     },
     "google/apiclient": {
         "version": "2.0",
@@ -194,6 +215,12 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "nyholm/dsn": {
+        "version": "2.0.0"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.7.2"
+    },
     "paragonie/constant_time_encoding": {
         "version": "v2.4.0"
     },
@@ -273,6 +300,12 @@
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"
+    },
+    "react/promise": {
+        "version": "v2.8.0"
+    },
+    "ruflin/elastica": {
+        "version": "6.1.5"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -536,6 +569,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.22.1"
+    },
+    "symfony/polyfill-php81": {
+        "version": "v1.23.0"
     },
     "symfony/property-access": {
         "version": "v5.2.4"

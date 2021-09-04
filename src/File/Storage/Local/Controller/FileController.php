@@ -7,6 +7,7 @@ namespace App\File\Storage\Local\Controller;
 use App\File\Exception\FileAccessException;
 use App\File\FilesStorageSwitcher;
 
+use FOS\ElasticaBundle\Finder\PaginatedFinderInterface;
 use League\Flysystem\FileNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -25,13 +26,40 @@ class FileController extends AbstractController
 	 * @var FilesStorageSwitcher
 	 */
 	private $filesStorageSwitcher;
+	/**
+	 * @var PaginatedFinderInterface
+	 */
+	private $finder;
 
 	public function __construct(
+		PaginatedFinderInterface $finder,
 		FilesStorageSwitcher $filesStorageSwitcher
 	)
 	{
+		$this->finder = $finder;
 		$this->filesStorageSwitcher = $filesStorageSwitcher;
 	}
+
+	/**
+	 * @Route("/elastic", name="elastic", methods={"GET"})
+	 */
+	public function elastic()
+	{
+		//$results = $this->finder->find('admin');
+
+
+		$fieldQuery = new \Elastica\Query\MatchQuery();
+		$fieldQuery->setFieldQuery('userData.nickname', 'odmen');
+		$fieldQuery->setFieldParam('userData.nickname', 'fuzziness', '6');
+
+
+		$data = $this->finder->find($fieldQuery);
+
+		echo 123;
+		exit;
+	}
+
+
 
 	/**
 	 * @Route("/download/{path}", name="download_file", methods={"GET"}, requirements={"path"=".+"})
